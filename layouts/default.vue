@@ -1,9 +1,21 @@
 <template>
-  <div>
+  <div style="min-width:1200px">
+    <!-- <no-ssr> -->
+      <CustomHeader/>
+    <!-- </no-ssr> -->
     <nuxt />
+    <CustomFooter/>
   </div>
 </template>
-
+<script>
+// const htmlWidth = document.documentElement.clientWidth || document.body.clientWidth
+// document.documentElement.style.fontSize = htmlWidth / 1920 * 100 + 'px'
+import CustomHeader from './../components/common/Hearder'
+import CustomFooter from './../components/common/Footer'
+export default {
+  components:{CustomHeader,CustomFooter}
+}
+</script>
 <style lang="scss">
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

@@ -13,7 +13,10 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      { src: '/rem/flexible.js', type: 'text/javascript', charset: 'utf-8'}
+   ],
   },
   /*
   ** Customize the progress-bar color
@@ -57,6 +60,11 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
+    postcss: [
+      require('postcss-px2rem')({
+        remUnit: 75
+      })
+    ],
   }
 }
