@@ -60,6 +60,8 @@ export default {
   }
 }
 #login-btn {
+  border: none;
+  font-size:18px;
   a {
     display: inline-flex;
     align-items: center;

@@ -1,6 +1,28 @@
 <template>
   <div id="footer">
-    <section id="subscribe">产品订阅</section>
+    <section id="subscribe">
+      <h3 class="module-title">产品订阅</h3>
+      <section class="company-contact">
+        <div class="company-contact-list" v-for="(data,index) in companyContactArrs"
+          :key="index">
+          <div class="company-contact-icon"></div>
+          <div class="company-contact-text">{{data.text}}</div>
+        </div>
+      </section>
+      <section class="user-info">
+        <form action="http://localhost:3000">
+          <div class="form-col">
+            <input class="form-input" type="text" name="name" placeholder="姓名：">
+            <input class="form-input" type="text" name="tel" placeholder="电话：">
+          </div>
+          <div class="form-col">
+            <input class="form-input" type="text" name="email" placeholder="邮箱：">
+            <input class="form-input" type="text" name="pxarks" placeholder="信息备注：">
+          </div>
+          <input class="submit-btn" type="submit" value="提交信息">
+        </form>
+      </section>
+    </section>
     <section id="footer-info">
       <div id="footer-info-top">
         <div id="footer-nav">
@@ -42,6 +64,19 @@ export default {
   },
   data() {
       return {
+        companyContactArrs:[
+            {
+              icon:'',
+              text:'公司地址',
+            },
+            {
+              icon:'',
+              text:'公司电话',
+            },{
+              icon:'',
+              text:'公司邮箱',
+            },
+          ],
           tel: "400-222-333",
           links:[
               {
@@ -64,13 +99,78 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ 
 #footer {
   overflow: hidden;
 }
 #subscribe {
   height: 770px;
-  padding: 100px 312px 0;
+  padding: 100px 390px 0;
+  overflow: hidden;
   /* background-color:#ff854c; */
+}
+.company-contact{
+  display:flex;
+  margin:76px auto 80px;
+  .company-contact-list{
+    flex:1;
+    .company-contact-icon{
+      width:60px;
+      height:60px;
+      background-color: #262d33;
+      margin:0 auto 23px;
+    }
+    .company-contact-text{
+      height:40px;
+      line-height: 40px;
+      text-align: center;
+      font-size:18px;
+      color:#6f6f6f;
+    }
+  }
+}
+.user-info{
+  margin-bottom:116px;
+  form{
+    display:flex;
+    align-items: center;
+    .form-col{
+      display:flex;
+      flex-direction: column;
+      margin-right:50px;
+      .form-input{
+        width:400px;
+        height:68px;
+        line-height:68px;
+        margin:20px 0;
+        font-size:18px;
+        color:#b8b8b8;
+        border:2px solid #b5b5b5;
+        border-radius:6px;
+        text-indent:12px;
+      }
+    }
+    .submit-btn{
+      width:100%;
+      height:58px;
+      line-height:58px;
+      text-align: center;
+      font-size:20px;
+      color:#fff;
+      background-color: #ff854c;
+      border-radius:6px;
+      box-shadow: 1px 1px 4px rgba(0,0,0,.8);
+    }
+    ::-webkit-input-placeholder{
+      color:#b8b8b8;
+    }
+    ::-moz-placeholder{
+      color:#b8b8b8;
+    }
+    :-ms-input-placeholder{
+      color:#b8b8b8;
+    }
+  }
 }
 #footer-info {
   /* height: 2.23px; */

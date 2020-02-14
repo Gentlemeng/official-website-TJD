@@ -26,7 +26,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '@/assets/css/base.css'
+    '@/assets/css/base.css',
+    '@/assets/css/common.css',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -63,7 +64,7 @@ module.exports = {
     },
     postcss: [
       require('postcss-px2rem')({
-        remUnit: 75
+        remUnit: 72
       })
     ],
   }

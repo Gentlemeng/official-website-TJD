@@ -21,7 +21,7 @@ export default {
       navData: [
         {
           title: "首页",
-          path: "home",
+          path: "/",
           disabled: false
         },
         {
